@@ -378,6 +378,7 @@ class HiredisParser(BaseParser):
 
     def on_disconnect(self):
         self._connected = False
+        self._reader = None
 
     async def can_read_destructive(self):
         if not self._connected:
